@@ -416,7 +416,7 @@
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v3M9 6h6M12 6l7 5v10H5V11l7-5Z"></path><path d="M10 20v-5h4v5"></path></svg>
       <p class="card-label">Groom's ceremony</p>
       <p class="card-time">Thứ Năm 01.10.2026</p>
-      <p class="card-venue">7:30 tại 04/10/2026, Xóm 17 Thanh Hương Đông, Phường Phong Phú, Thành phố Huế</p>
+      <p class="card-venue">7:30 ngày 04/10/2026 tại Xóm 17 Thanh Hương Đông, Phường Phong Phú, Thành phố Huế</p>
       <div class="card-maps">
         <a class="btn-line" id="mapGroomGoogle" href="#" target="_blank" rel="noopener">Google Maps</a>
       </div>
@@ -425,7 +425,7 @@
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3v3M9 6h6M12 6l7 5v10H5V11l7-5Z"></path><path d="M10 20v-5h4v5"></path></svg>
       <p class="card-label">Bride's ceremony</p>
       <p class="card-time">Thứ Năm 01.10.2026</p>
-      <p class="card-venue">8:00 tại 01/10/2026, Đội 2 - Thôn Hoà Bân, Xã Tịnh Thiện Cũ (Tịnh Khê Mới), Thành phố Quảng Ngãi</p>
+      <p class="card-venue">8:00 ngày 01/10/2026 tại Đội 2 - Thôn Hòa Bân, Xã Tịnh Thiện Cũ (Tịnh Khê Mới), Thành phố Quảng Ngãi</p>
       <div class="card-maps">
         <a class="btn-line" id="mapBrideGoogle" href="#" target="_blank" rel="noopener">Google Maps</a>
       </div>
@@ -433,8 +433,8 @@
     <div class="wedding-card">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="5" y="4" width="14" height="17"></rect><path d="M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2"></path></svg>
       <p class="card-label">Reception</p>
-      <p class="card-time">22:00, Thứ Năm 01.10.2026</p>
-      <p class="card-venue">Nhà Văn Hoá Thanh Hương Đông, Phường Phong Phú, Thành phố Huế</p>
+      <p class="card-time">10:00, Thứ Năm 01.10.2026</p>
+      <p class="card-venue">Tiệc nhà trai tại nhà Văn Hóa Thanh Hương Đông, Phường Phong Phú, Thành phố Huế</p>
       <div class="card-maps">
         <a class="btn-line" id="mapReceptionGoogle" href="#" target="_blank" rel="noopener">Google Maps</a>
       </div>
@@ -582,7 +582,7 @@
       revealEls.forEach(function (el) { el.classList.add('in'); });
     }
 
-    var target = new Date('2026-10-01T22:00:00+07:00').getTime();
+    var target = new Date('2026-10-01T10:00:00+07:00').getTime();
     function tick() {
       var now = Date.now();
       var diff = Math.max(0, target - now);
@@ -634,9 +634,9 @@
 
     // Map links
     var venues = {
-      groom: '7:30 tại 04/10/2026, Xóm 17 Thanh Hương Đông, Phường Phong Phú, Thành phố Huế',
-      bride: '8:00 tại 01/10/2026, Đội 2 - Thôn Hoà Bân, Xã Tịnh Thiện Cũ (Tịnh Khê Mới), Thành phố Quảng Ngãi',
-      reception: 'Nhà Văn Hoá Thanh Hương Đông, Phường Phong Phú, Thành phố Huế'
+      groom: '7:30 ngày 04/10/2026 tại Xóm 17 Thanh Hương Đông, Phường Phong Phú, Thành phố Huế',
+      bride: '8:00 ngày 01/10/2026 tại Đội 2 - Thôn Hòa Bân, Xã Tịnh Thiện Cũ (Tịnh Khê Mới), Thành phố Quảng Ngãi',
+      reception: 'Tiệc nhà trai tại nhà Văn Hóa Thanh Hương Đông, Phường Phong Phú, Thành phố Huế'
     };
     function gmaps(addr) { return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(addr); }
     document.getElementById('mapGroomGoogle').href = gmaps(venues.groom);
@@ -648,7 +648,7 @@
     function buildIcs() {
       return [
         'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
-        'DTSTART:20261001T150000Z', 'DTEND:20261001T180000Z',
+        'DTSTART:20261001T030000Z', 'DTEND:20261001T060000Z',
         'SUMMARY:Tiệc cưới Phúc & $ Sen',
         'LOCATION:' + venues.reception,
         'DESCRIPTION:Trân trọng kính mời đến chung vui tiệc cưới của Phúc & $ Sen.',
@@ -667,7 +667,7 @@
     document.getElementById('addGoogleCal').addEventListener('click', function () {
       var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
         + '&text=' + encodeURIComponent('Tiệc cưới Phúc & $ Sen')
-        + '&dates=20261001T150000Z/20261001T180000Z'
+        + '&dates=20261001T030000Z/20261001T060000Z'
         + '&details=' + encodeURIComponent('Trân trọng kính mời đến chung vui tiệc cưới của Phúc & $ Sen.')
         + '&location=' + encodeURIComponent(venues.reception);
       window.open(url, '_blank', 'noopener');
